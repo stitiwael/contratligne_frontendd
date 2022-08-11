@@ -1,0 +1,44 @@
+
+<H4>NOUVEAU CONTRAT</H4>
+<form [formGroup]="addContratForm">
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault02">TYPE DE CONTRAT</label>
+        <select class="form-select" aria-label="Default select example" formControlName="type_contrat">
+            <option selected>Open this select menu</option>
+            <option value="ADSL">ADSL</option>
+            <option value="FIBRE OPTIQUE">FIBRE OPTIQUE</option>
+            <option value="FIX BOX">FIX BOX</option>
+          </select>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault01">CODE CONTRAT</label>
+        <input type="text" class="form-control" id="validationDefault01" placeholder="CODE CONTRAT" formControlName="code_contrat" required>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault02">CLIENT</label>
+        <input type="text" class="form-control" id="validationDefault02" placeholder="NOM DU CLIENT" formControlName="client_name" required>
+      </div>
+    
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationDefault03">Date De debut de contrat</label>
+        <input type="datetime-local" class="form-control" id="validationDefault03" formControlName="date_debut" required>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationDefault04">Date De fin de contrat</label>
+        <input type="datetime-local" class="form-control" id="validationDefault04" formControlName="date_fin" required>
+      </div>
+     
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+        <label class="form-check-label" for="invalidCheck2">
+          Agree to terms and conditions
+        </label>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit" (click)="addContrat()">Save</button>
+  </form>

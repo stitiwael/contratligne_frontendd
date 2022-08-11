@@ -1,0 +1,45 @@
+
+
+<div><h3>LISTE DES CLIENTS</h3></div>
+<div>
+<table class="table caption-top">
+    <thead>
+      <tr>
+        <th scope="col">NOM</th>
+        <th scope="col">PRENOM</th>
+        <th scope="col">ADRESSE</th>
+        <th scope="col">MOBILE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ct of clients">
+        <th scope="row">{{ ct.name }}</th>
+        <td>{{ ct.last_name }}</td>
+        <td>{{ ct.adresse }}</td>
+        <td>{{ ct.phone_number }}</td>
+        <td>
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">
+                <button type="button" class="btn btn-warning" >Edit</button>
+              </font></font
+            >
+          </td>
+
+          <td>
+            <font style="vertical-align: inherit" 
+              ><font style="vertical-align: inherit" >
+                <button type="button" class="btn btn-primary" >Delete</button>
+              </font></font
+            >
+          </td>
+          <td>
+            <font style="vertical-align: inherit" 
+              ><font style="vertical-align: inherit" >
+                <button type="button" class="btn btn-primary" (click)="showclientcontrats(ct.id)" >view contrats</button>
+              </font></font
+            >
+          </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

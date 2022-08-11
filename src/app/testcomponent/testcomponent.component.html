@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--<link href="https://cdn.jsdelivr.net/npm/boosted@5.2.0-beta1/dist/fonts/HelvNeue55_W1G.woff2" rel="preload" as="font" type="font/woff2" integrity="sha384-R6e0PFLMMV6HBvkQK22ecNfjOzyh89wSndiTC71MuvoaOnhIYgOAGVC0gW0kVN16" crossorigin="anonymous">-->
+
+    <!--<link href="https://cdn.jsdelivr.net/npm/boosted@5.2.0-beta1/dist/fonts/HelvNeue75_W1G.woff2" rel="preload" as="font" type="font/woff2" integrity="sha384-ylOkwNNvSwXpWNbpEhI45ruJTXyfQbIb42IxMvSGGcndZBpZ9iAmOFSUl4/Goeqz" crossorigin="anonymous">-->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/boosted@5.2.0-beta1/dist/css/orange-helvetica.min.css"
+      rel="stylesheet"
+      integrity="sha384-A0Qk1uKfS1i83/YuU13i2nx5pk79PkIfNFOVzTcjCMPGKIDj9Lqx9lJmV7cdBVQZ"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/boosted@5.2.0-beta1/dist/css/boosted.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div *ngIf="bdel==true" class="alert alert-success" role="alert">
+      <span class="alert-icon"><span class="visually-hidden">Success</span></span>
+      <p>Data is deleted .</p>
+    </div>
+    <div class="wrapper col-md-12 mt-3 nopadding" id="main-container">
+      <table class="table exemple">
+        <thead>
+          <br />
+
+          <br />
+
+          <tr>
+            <th scope="col">
+              <font style="vertical-align: inherit"
+                ><font style="vertical-align: inherit">ID</font></font
+              >
+            </th>
+
+            <th scope="col">
+              <font style="vertical-align: inherit"
+                ><font style="vertical-align: inherit">code contrat</font></font
+              >
+            </th>
+          </tr>
+        </thead>
+
+        <tbody class="table-group-divider">
+          <tr *ngFor="let td of testData">
+            <td>
+              <font style="vertical-align: inherit"
+                ><font style="vertical-align: inherit">{{ td.id }}</font></font
+              >
+            </td>
+
+            <td>
+              <font style="vertical-align: inherit"
+                ><font style="vertical-align: inherit">{{
+                  td.dumpdata
+                }}</font></font
+              >
+            </td>
+
+            <td>
+              <font style="vertical-align: inherit"
+                ><font style="vertical-align: inherit">
+                  <button type="button" class="btn btn-primary" (click)="updateData(td.id)">Edit</button>
+                </font></font
+              >
+            </td>
+
+            <td>
+              <font style="vertical-align: inherit"
+                ><font style="vertical-align: inherit">
+                  <button type="button" class="btn btn-primary" (click)="deleteTD(td.id)">Delete</button>
+                </font></font
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/boosted@5.2.0-beta1/dist/js/boosted.bundle.min.js"></script>
+    <div>
+      <form [formGroup]="addDataForm" >
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Dump data"
+        aria-label="default input example"
+        formControlName="dumpdata"
+
+      />
+      <button class="btn btn-primary" [disabled]="!addDataForm.valid" (click)="addData()" type="submit">Add</button>
+    </form>
+    </div>
+   
+  </body>
+</html>

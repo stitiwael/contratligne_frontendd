@@ -1,0 +1,40 @@
+
+
+<div><h3>LISTE DES CONTRATS</h3></div>
+<div>
+<table class="table caption-top">
+    <thead>
+      <tr>
+        <th scope="col">CODE CONTRAT</th>
+        <th scope="col">TYPE CONTRAT</th>
+        <th scope="col">DATE DEBUT</th>
+        <th scope="col">DATE FIN</th>
+        <th scope="col">CLIENT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ct of contrats">
+        <th scope="row">{{ ct.code_contrat }}</th>
+        <td>{{ ct.type_contrat }}</td>
+        <td>{{ ct.date_debut }}</td>
+        <td>{{ ct.date_fin }}</td>
+        <td>{{ ct.client_name }}</td>
+        <td>
+            <font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">
+                <button type="button" class="btn btn-warning" >Edit</button>
+              </font></font
+            >
+          </td>
+
+          <td>
+            <font style="vertical-align: inherit" 
+              ><font style="vertical-align: inherit" >
+                <button type="button" class="btn btn-primary" >Delete</button>
+              </font></font
+            >
+          </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

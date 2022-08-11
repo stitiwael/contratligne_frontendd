@@ -1,0 +1,23 @@
+.row.gutterFix{
+    --bs-gutter-x: 0
+}
+
+.colSide{
+    flex: 0 0 auto;
+    width: 15%;
+    border: 1px solid black;
+    border-right: 0px;
+    border-top: 0px;
+    border-left: 1px solid black;
+    border-bottom: 0px;
+}
+
+.colMain{
+    flex: 0 0 auto;
+    width: 80%;
+    border: 1px solid black;
+    border-right: 0px;
+    border-top: 0px;
+    border-left: 1px solid black;
+    border-bottom: 0px;
+}
