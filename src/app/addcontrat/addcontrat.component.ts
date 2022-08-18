@@ -12,11 +12,11 @@ export class AddcontratComponent implements OnInit {
   contrat!:any;
 
   addContratForm = new FormGroup({
-    type_contrat: new FormControl('', [Validators.required]),
-    code_contrat:  new FormControl('', [Validators.required]),
-    date_debut:  new FormControl('', [Validators.required]),
-    date_fin:  new FormControl('', [Validators.required]),
-    client_name:  new FormControl('', [Validators.required])
+    typeContrat: new FormControl('', [Validators.required]),
+    codeContrat:  new FormControl('', [Validators.required]),
+    dateDebut:  new FormControl('', [Validators.required]),
+    dateFin:  new FormControl('', [Validators.required]),
+    clientName:  new FormControl('', [Validators.required])
   });
 
   constructor(private contratserv : ContratService) { }

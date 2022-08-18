@@ -1,0 +1,27 @@
+
+<H4>NOUVEAU DOSSIER</H4>
+<form [formGroup]="addNodeForm">
+    <div class="form-row">
+      
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault01">nom</label>
+        <input type="text" class="form-control" id="validationDefault01" placeholder="nom" formControlName="name" required>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault01">PARENT FOLDER</label>
+        <input type="text" class="form-control" id="validationDefault01" placeholder="parent folder name" formControlName="parentNodeName" required>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault02">Url</label>
+        <input type="text" class="form-control" id="validationDefault02" placeholder="url" formControlName="url" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationDefault03">Date de creation</label>
+        <input type="datetime-local" class="form-control" id="validationDefault03" formControlName="dateDeCreation" required>
+      </div>
+     
+    </div>
+    <button class="btn btn-primary" type="submit" (click)="addNode()">Save</button>
+  </form>

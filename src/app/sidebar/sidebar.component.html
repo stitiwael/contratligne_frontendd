@@ -15,20 +15,22 @@
       class="cd-accordion margin-top-lg margin-bottom-lg"
       style="margin-top: 10px"
     >
-      <li
+      <li *ngFor="let pr of parent"
         class="cd-accordion__item cd-accordion__item--has-children"
         class="nav-item"
       >
         <input
           class="cd-accordion__input"
           type="checkbox"
-          name="group-1"
-          id="group-1"
+          name={{pr.id}}
+          id={{pr.id}}
+          (click)="getChildFolders(pr.name)"
+          
         />
 
         <label
           class="cd-accordion__label cd-accordion__label--icon-folder"
-          for="group-1"
+          for={{pr.id}}
           ><span>
             <i
               class="fa fa-angle-right"
@@ -40,81 +42,28 @@
               aria-hidden="true"
               style="padding-right: 10px"
             ></i>
-            Group 1
+            {{pr.name}}
           </span>
         </label>
 
-        <ul class="cd-accordion__sub cd-accordion__sub--l1">
-          <li class="cd-accordion__item cd-accordion__item--has-children">
+        <ul  *ngFor="let ch of child" class="cd-accordion__sub cd-accordion__sub--l1"  >
+          <li *ngIf=" ch.url == null" class="cd-accordion__item cd-accordion__item--has-children"
+               class="nav-item"
+          >
+          
             <input
               class="cd-accordion__input"
               type="checkbox"
-              name="sub-group-1"
-              id="sub-group-1"
+              name={{ch.id}}
+              id={{ch.id}}
+              (click)="getSousChildFolders(ch.name)"
             />
+            
             <label
               class="cd-accordion__label cd-accordion__label--icon-folder"
-              for="sub-group-1"
-              ><span>Sub Group 1</span></label
-            >
-
-            <ul class="cd-accordion__sub cd-accordion__sub--l2">
-              <li class="cd-accordion__item">
-                <a
-                  class="cd-accordion__label cd-accordion__label--icon-img"
-                  href="#0"
-                  ><span>Image</span></a
-                >
-              </li>
-              <li class="cd-accordion__item">
-                <a
-                  class="cd-accordion__label cd-accordion__label--icon-img"
-                  href="#0"
-                  ><span>Image</span></a
-                >
-              </li>
-              <li class="cd-accordion__item">
-                <a
-                  class="cd-accordion__label cd-accordion__label--icon-img"
-                  href="#0"
-                  ><span>Image</span></a
-                >
-              </li>
-            </ul>
-          </li>
-
-          <li class="cd-accordion__item">
-            <a
-              class="cd-accordion__label cd-accordion__label--icon-img"
-              href="#0"
-              ><span>Image</span></a
-            >
-          </li>
-          <li class="cd-accordion__item">
-            <a
-              class="cd-accordion__label cd-accordion__label--icon-img"
-              href="#0"
-              ><span>Image</span></a
-            >
-          </li>
-        </ul>
-      </li>
-      <li
-        class="cd-accordion__item cd-accordion__item--has-children"
-        class="nav-item"
-      >
-        <input
-          class="cd-accordion__input"
-          type="checkbox"
-          name="group-1"
-          id="group-1"
-        />
-
-        <label
-          class="cd-accordion__label cd-accordion__label--icon-folder"
-          for="group-1"
-          ><span>
-            <i
+              for={{ch.id}}
+              ><span>
+                <i
               class="fa fa-angle-right"
               aria-hidden="true"
               style="padding-right: 5px"
@@ -124,229 +73,61 @@
               aria-hidden="true"
               style="padding-right: 10px"
             ></i>
-            Group 1
-          </span>
-        </label>
-
-        <ul class="cd-accordion__sub cd-accordion__sub--l1">
-          <li class="cd-accordion__item cd-accordion__item--has-children">
-            <input
-              class="cd-accordion__input"
-              type="checkbox"
-              name="sub-group-1"
-              id="sub-group-1"
-            />
-            <label
-              class="cd-accordion__label cd-accordion__label--icon-folder"
-              for="sub-group-1"
-              ><span>Sub Group 1</span></label
+                {{ch.name}}</span></label
             >
+            
 
-            <ul class="cd-accordion__sub cd-accordion__sub--l2">
-              <li class="cd-accordion__item">
-                <a
-                  class="cd-accordion__label cd-accordion__label--icon-img"
-                  href="#0"
-                  ><span>Image</span></a
+            <ul *ngFor="let sch of schild" class="cd-accordion__sub cd-accordion__sub--l2">
+
+              <li  *ngIf=" sch.url == null" class="cd-accordion__item cd-accordion__item--has-children"
+              class="nav-item">
+                <input
+                  class="cd-accordion__input"
+                  type="checkbox"
+                  name={{sch.id}}
+                  id={{sch.id}}
+                />
+                <label
+                  class="cd-accordion__label cd-accordion__label--icon-folder"
+                  for={{sch.id}}
+                  ><span>
+                    <i
+                    class="fa fa-angle-right"
+                    aria-hidden="true"
+                    style="padding-right: 5px"
+                  ></i>
+                  <i
+                    class="fa fa-folder-open"
+                    aria-hidden="true"
+                    style="padding-right: 10px"
+                  ></i>
+                    {{sch.name}}</span></label
                 >
               </li>
-              <li class="cd-accordion__item">
+              <li *ngIf=" sch.url != null" class="cd-accordion__item">
                 <a
                   class="cd-accordion__label cd-accordion__label--icon-img"
-                  href="#0"
-                  ><span>Image</span></a
-                >
-              </li>
-              <li class="cd-accordion__item">
-                <a
-                  class="cd-accordion__label cd-accordion__label--icon-img"
-                  href="#0"
-                  ><span>Image</span></a
+                  
+                  (click)="showFile(sch.url)"
+                  href=""
+                  ><span>
+                    
+                    <i class="fa fa-file" aria-hidden="true" style="padding-right: 10px"></i>
+                    {{sch.name}}</span></a
                 >
               </li>
             </ul>
           </li>
 
-          <li class="cd-accordion__item">
+          <li *ngIf=" ch.url != null" class="cd-accordion__item">
             <a
               class="cd-accordion__label cd-accordion__label--icon-img"
-              href="#0"
-              ><span>Image</span></a
-            >
-          </li>
-          <li class="cd-accordion__item">
-            <a
-              class="cd-accordion__label cd-accordion__label--icon-img"
-              href="#0"
-              ><span>Image</span></a
-            >
-          </li>
-        </ul>
-      </li>
-      <li
-        class="cd-accordion__item cd-accordion__item--has-children"
-        class="nav-item"
-      >
-        <input
-          class="cd-accordion__input"
-          type="checkbox"
-          name="group-1"
-          id="group-1"
-        />
-
-        <label
-          class="cd-accordion__label cd-accordion__label--icon-folder"
-          for="group-1"
-          ><span>
-            <i
-              class="fa fa-angle-right"
-              aria-hidden="true"
-              style="padding-right: 5px"
-            ></i>
-            <i
-              class="fa fa-folder-open"
-              aria-hidden="true"
-              style="padding-right: 10px"
-            ></i>
-            Group 1
-          </span>
-        </label>
-
-        <ul class="cd-accordion__sub cd-accordion__sub--l1">
-          <li class="cd-accordion__item cd-accordion__item--has-children">
-            <input
-              class="cd-accordion__input"
-              type="checkbox"
-              name="sub-group-1"
-              id="sub-group-1"
-            />
-            <label
-              class="cd-accordion__label cd-accordion__label--icon-folder"
-              for="sub-group-1"
-              ><span>Sub Group 1</span></label
-            >
-
-            <ul class="cd-accordion__sub cd-accordion__sub--l2">
-              <li class="cd-accordion__item">
-                <a
-                  class="cd-accordion__label cd-accordion__label--icon-img"
-                  href="#0"
-                  ><span>Image</span></a
-                >
-              </li>
-              <li class="cd-accordion__item">
-                <a
-                  class="cd-accordion__label cd-accordion__label--icon-img"
-                  href="#0"
-                  ><span>Image</span></a
-                >
-              </li>
-              <li class="cd-accordion__item">
-                <a
-                  class="cd-accordion__label cd-accordion__label--icon-img"
-                  href="#0"
-                  ><span>Image</span></a
-                >
-              </li>
-            </ul>
-          </li>
-
-          <li class="cd-accordion__item">
-            <a
-              class="cd-accordion__label cd-accordion__label--icon-img"
-              href="#0"
-              ><span>Image</span></a
-            >
-          </li>
-          <li class="cd-accordion__item">
-            <a
-              class="cd-accordion__label cd-accordion__label--icon-img"
-              href="#0"
-              ><span>Image</span></a
-            >
-          </li>
-        </ul>
-      </li>
-      <li
-        class="cd-accordion__item cd-accordion__item--has-children"
-        class="nav-item"
-      >
-        <input
-          class="cd-accordion__input"
-          type="checkbox"
-          name="group-1"
-          id="group-1"
-        />
-
-        <label
-          class="cd-accordion__label cd-accordion__label--icon-folder"
-          for="group-1"
-          ><span>
-            <i
-              class="fa fa-angle-right"
-              aria-hidden="true"
-              style="padding-right: 5px"
-            ></i>
-            <i
-              class="fa fa-folder-open"
-              aria-hidden="true"
-              style="padding-right: 10px"
-            ></i>
-            Group 1
-          </span>
-        </label>
-
-        <ul class="cd-accordion__sub cd-accordion__sub--l1">
-          <li class="cd-accordion__item cd-accordion__item--has-children">
-            <input
-              class="cd-accordion__input"
-              type="checkbox"
-              name="sub-group-1"
-              id="sub-group-1"
-            />
-            <label
-              class="cd-accordion__label cd-accordion__label--icon-folder"
-              for="sub-group-1"
-              ><span>Sub Group 1</span></label
-            >
-
-            <ul class="cd-accordion__sub cd-accordion__sub--l2">
-              <li class="cd-accordion__item">
-                <a
-                  class="cd-accordion__label cd-accordion__label--icon-img"
-                  href="#0"
-                  ><span>Image</span></a
-                >
-              </li>
-              <li class="cd-accordion__item">
-                <a
-                  class="cd-accordion__label cd-accordion__label--icon-img"
-                  href="#0"
-                  ><span>Image</span></a
-                >
-              </li>
-              <li class="cd-accordion__item">
-                <a
-                  class="cd-accordion__label cd-accordion__label--icon-img"
-                  href="#0"
-                  ><span>Image</span></a
-                >
-              </li>
-            </ul>
-          </li>
-
-          <li class="cd-accordion__item">
-            <a
-              class="cd-accordion__label cd-accordion__label--icon-img"
-              href="#0"
-              ><span>Image</span></a
-            >
-          </li>
-          <li class="cd-accordion__item">
-            <a
-              class="cd-accordion__label cd-accordion__label--icon-img"
-              href="#0"
-              ><span>Image</span></a
+              href=""
+              (click)="showFile(ch.url)"
+              ><span>
+                
+                <i class="fa fa-file" aria-hidden="true" style="padding-right: 10px"></i>
+                {{ch.name}}</span></a
             >
           </li>
         </ul>

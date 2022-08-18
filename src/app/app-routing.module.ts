@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddcontratComponent } from './addcontrat/addcontrat.component';
+import { AddnodeComponent } from './addnode/addnode.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { ClientlistComponent } from './clientlist/clientlist.component';
 import { ContratclientComponent } from './contratclient/contratclient.component';
 import { ContratsListComponent } from './contrats-list/contrats-list.component';
+import { DisplayfilesComponent } from './displayfiles/displayfiles.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TestcomponentComponent } from './testcomponent/testcomponent.component';
 import { UpdatedataComponent } from './updatedata/updatedata.component';
@@ -18,7 +20,10 @@ const routes: Routes = [
   { path: 'add/contrat', component: AddcontratComponent },
   { path: 'show/listcontrat', component: ContratsListComponent },
   { path: 'show/listclient', component: ClientlistComponent },
-  { path: 'show/clientcontrat', component: ContratclientComponent }
+  { path: 'show/clientcontrat', component: ContratclientComponent },
+  { path: 'add/folder', component: AddnodeComponent },
+  { path: 'show/file', component: DisplayfilesComponent }
+
 ];
 
 @NgModule({

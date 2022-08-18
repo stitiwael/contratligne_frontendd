@@ -24,8 +24,6 @@ export class ContratsListComponent implements OnInit {
     );
   }
 
-  public showclientcontrats(id : any){
-    this.router.navigate(["/show/clientcontrat", id]);
-  }
+ 
 
 }

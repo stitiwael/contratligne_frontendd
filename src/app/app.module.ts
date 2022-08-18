@@ -71,6 +71,14 @@ import { ContratsListComponent } from './contrats-list/contrats-list.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ClientlistComponent } from './clientlist/clientlist.component';
 import { ContratclientComponent } from './contratclient/contratclient.component';
+import { AddnodeComponent } from './addnode/addnode.component';
+import { TreeViewModule  } from '@syncfusion/ej2-angular-navigations';
+import { ListViewModule } from '@syncfusion/ej2-angular-lists';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { DisplayfilesComponent } from './displayfiles/displayfiles.component';
+
+
+
 
 
 
@@ -89,11 +97,16 @@ import { ContratclientComponent } from './contratclient/contratclient.component'
     WelcomeComponent,
     ClientlistComponent,
     ContratclientComponent,
+    AddnodeComponent,
+    DisplayfilesComponent,
     
     
   ],
   imports: [
     BrowserModule,
+    CheckBoxModule, 
+    ListViewModule, 
+    TreeViewModule,
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,

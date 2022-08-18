@@ -14,10 +14,10 @@ export class AdduserComponent implements OnInit {
 
 
   addClientForm = new FormGroup({
-    last_name: new FormControl('', [Validators.required]),
+    lastName: new FormControl('', [Validators.required]),
     name:  new FormControl('', [Validators.required]),
     adresse:  new FormControl('', [Validators.required]),
-    phone_number:  new FormControl('', [Validators.required])
+    phoneNumber:  new FormControl('', [Validators.required])
 
   });
 
@@ -35,7 +35,7 @@ export class AdduserComponent implements OnInit {
     this.client = this.addClientForm.value;
     this.clientservice.addClient(this.client).subscribe((response: any) => {
       console.log(response);
-      this.router.navigate(['/show/listcontrat']);
+      this.router.navigate(['/show/listclient']);
     });
 
 
