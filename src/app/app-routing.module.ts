@@ -4,6 +4,9 @@ import { AddcontratComponent } from './addcontrat/addcontrat.component';
 import { AddnodeComponent } from './addnode/addnode.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { ClientlistComponent } from './clientlist/clientlist.component';
+import { FileListComponent } from './content/file-list/file-list.component';
+import { UpdateFileComponent } from './content/update-file/update-file.component';
+import { UploadFileComponent } from './content/upload-file/upload-file.component';
 import { ContratclientComponent } from './contratclient/contratclient.component';
 import { ContratsListComponent } from './contrats-list/contrats-list.component';
 import { DisplayfilesComponent } from './displayfiles/displayfiles.component';
@@ -22,7 +25,11 @@ const routes: Routes = [
   { path: 'show/listclient', component: ClientlistComponent },
   { path: 'show/clientcontrat', component: ContratclientComponent },
   { path: 'add/folder', component: AddnodeComponent },
-  { path: 'show/file', component: DisplayfilesComponent }
+  { path: 'show/file', component: DisplayfilesComponent },
+  { path: 'upload/file', component: UploadFileComponent },
+  { path: 'list/file', component: FileListComponent },
+  { path: 'update/file', component: UpdateFileComponent }
+
 
 ];
 

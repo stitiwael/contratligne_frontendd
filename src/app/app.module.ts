@@ -76,6 +76,9 @@ import { TreeViewModule  } from '@syncfusion/ej2-angular-navigations';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { DisplayfilesComponent } from './displayfiles/displayfiles.component';
+import { UploadFileComponent } from './content/upload-file/upload-file.component';
+import { FileListComponent } from './content/file-list/file-list.component';
+import { UpdateFileComponent } from './content/update-file/update-file.component';
 
 
 
@@ -99,11 +102,16 @@ import { DisplayfilesComponent } from './displayfiles/displayfiles.component';
     ContratclientComponent,
     AddnodeComponent,
     DisplayfilesComponent,
+    UploadFileComponent,
+    FileListComponent,
+    UpdateFileComponent,
     
     
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     CheckBoxModule, 
     ListViewModule, 
     TreeViewModule,

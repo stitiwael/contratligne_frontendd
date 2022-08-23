@@ -1,0 +1,25 @@
+
+<!-- CSS only -->
+
+<link href="https://cdn.jsdelivr.net/npm/boosted@5.2.0/dist/css/boosted.min.css" rel="stylesheet" integrity="sha384-CYwBBOBitXWralvRBTTEteu86YHHydT/+Wsv4kmxP6oF/SaesPQeMxLbblEUyZf/" crossorigin="anonymous">
+<div class="alert alert-success" role="alert" *ngIf="fileadded == true">
+    <span class="alert-icon"><span class="visually-hidden">Success</span></span>
+    <p>Document ajouté !</p>
+  </div>
+<div class="card">
+    <div class="card-header" style="text-align: center;">
+      Télécharger un Document
+    </div>
+    <div class="card-body">
+     
+     
+    </div>
+</div>
+<form class="row g-3" [formGroup]="addFileForm" enctype="multipart/form-data">
+<div class="input-group">
+    <input type="file" class="form-control" name="file" id="file"  aria-describedby="inputGroupFileAddon04" aria-label="Upload" formControlName="file"  #file (change)="onChange(file.files)">
+    <button class="btn btn-secondary" type="submit"  (click)="onUploadFile()" >Button</button>
+</div>
+</form>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/boosted@5.2.0/dist/js/boosted.bundle.min.js" integrity="sha384-NkAB+hiFHsv6dxwL0C4lJtfq1RblxY6+DRFn5QZDpgCdwB5RiOGjaJB0Weq0uCy3" crossorigin="anonymous"></script>

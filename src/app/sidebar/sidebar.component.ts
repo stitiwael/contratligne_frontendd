@@ -67,7 +67,7 @@ export class SidebarComponent implements OnInit {
 
   public showFile(url : any){
     this.router.navigate(["show/file", { url: url }]);
-    document.getElementById('iframe').contentWindow.location.reload();
+   
     return false;
 
     
