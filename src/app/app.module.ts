@@ -107,6 +107,7 @@ import { UpdateFileComponent } from './content/update-file/update-file.component
     UpdateFileComponent,
     
     
+    
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FolderService } from 'src/app/services/folder.service';
 import {NgForm} from '@angular/forms';
 import  {  FormsModule,  ReactiveFormsModule  }  from  '@angular/forms';
+import { document } from 'ngx-bootstrap/utils';
 
 @Component({
   selector: 'app-upload-file',
@@ -43,5 +44,26 @@ export class UploadFileComponent implements OnInit {
   }
   reportProgress(event: HttpEvent<any>) {
     throw new Error('Method not implemented.');
+  }
+
+  add(){
+
+    let row = document.createElement('div');  
+
+      row.className = 'row';
+
+      row.innerHTML = `
+
+      <br>
+
+      <div class="input-group">
+
+  <span class="input-group-text">Ajouter nouvelle meta-donné</span>
+  <input type="text" placeholder="key" aria-label="First name" class="form-control" name="key">
+  <input type="text" placeholder="value" aria-label="Last name" class="form-control" name="value">
+</div>`;
+
+      document.querySelector('.showInputField').appendChild(row);
+
   }
 }

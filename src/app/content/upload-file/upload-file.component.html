@@ -20,6 +20,18 @@
     <input type="file" class="form-control" name="file" id="file"  aria-describedby="inputGroupFileAddon04" aria-label="Upload" formControlName="file"  #file (change)="onChange(file.files)">
     <button class="btn btn-secondary" type="submit"  (click)="onUploadFile()" >Button</button>
 </div>
+
+<div>
+
+  <div class="showInputField"></div>
+
+ 
+
+  <!-- The add() function is called -->
+
+  <button (click)="add()" class="btn btn-primary" >+</button>
+
+</div>
 </form>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/boosted@5.2.0/dist/js/boosted.bundle.min.js" integrity="sha384-NkAB+hiFHsv6dxwL0C4lJtfq1RblxY6+DRFn5QZDpgCdwB5RiOGjaJB0Weq0uCy3" crossorigin="anonymous"></script>
